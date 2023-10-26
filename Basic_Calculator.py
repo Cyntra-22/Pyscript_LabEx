@@ -8,7 +8,7 @@ class Calculator:
 
 demo_calculator = Calculator("", "", "", "")
 answer = Element("typing-text")
-numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9","."]
 sign = ["equal-to", "ac", "backspace"]
 
 
@@ -28,14 +28,13 @@ def sign_clicked(args):
     if args.target.id == "equal-to":
        calculate()
     elif args.target.id == "delete":
-        clear_all()
+       delete()
     elif args.target.id == "ac":
         clear_all()
     elif args.target.id not in sign:
         demo_calculator.cal_type = args.target.id
         demo_calculator.sign_click = args.target.innerText
         Element("typing-text").element.innerHTML += "<span>" + demo_calculator.sign_click + "</span>"
-
 
 
 def calculate():
@@ -67,5 +66,12 @@ def clear_all():
     demo_calculator.sign_click = ""
     Element("typing-text").element.innerHTML = ""
     Element("answer").element.innerText = ""
+
+
+def delete():
+
+    currentText = Element("typing-text").element.innerHTML
+    Element("typing-text").element.innerHTML = currentText.slice(0, -1)
+
 
 
