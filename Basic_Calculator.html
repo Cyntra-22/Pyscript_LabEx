@@ -59,47 +59,49 @@
     </style>
   </head>
   <body>
+    <py-script src="Basic_Calculator.py"> </py-script>
     <table id="myTable">
       <tbody>
         <tr>
-          <td colspan="4" style="text-align: right">
-            <label id="result">0</label>
+          <td colspan="4" style="text-align: right" id="typing-text">
+            <label id="answer"></label>
           </td>
         </tr>
         <tr>
-          <td id="Backspace">&lt;</td>
-          <td id="/">/</td>
-          <td id="*">*</td>
+          <td id="Backspace" pys-onClick="sign_clicked">&lt;</td>
+          <td id="divid" pys-onClick="sign_clicked">/</td>
+          <td id="multiply" pys-onClick="sign_clicked">*</td>
           <td
-            id="-"
+            id="minus"
             style="
               font-family: 'Courier New', Courier, monospace;
               font-weight: bold;
             "
+            pys-onClick="sign_clicked"
           >
             -
           </td>
         </tr>
         <tr>
-          <td id="7">7</td>
-          <td id="8">8</td>
-          <td id="9">9</td>
-          <td id="+" rowspan="2">+</td>
+          <td id="7" pys-onClick="numbers_clicked">7</td>
+          <td id="8" pys-onClick="numbers_clicked">8</td>
+          <td id="9" pys-onClick="numbers_clicked">9</td>
+          <td id="plus" rowspan="2" pys-onClick="sign_clicked">+</td>
         </tr>
         <tr>
-          <td id="4">4</td>
-          <td id="5">5</td>
-          <td id="6">6</td>
+          <td id="4" pys-onClick="numbers_clicked">4</td>
+          <td id="5" pys-onClick="numbers_clicked">5</td>
+          <td id="6" pys-onClick="numbers_clicked">6</td>
         </tr>
         <tr>
-          <td id="1">1</td>
-          <td id="2">2</td>
-          <td id="3">3</td>
-          <td id="Enter" rowspan="2">=</td>
+          <td id="1" pys-onClick="numbers_clicked">1</td>
+          <td id="2" pys-onClick="numbers_clicked">2</td>
+          <td id="3" pys-onClick="numbers_clicked">3</td>
+          <td id="Enter" rowspan="2" pys-onClick="sign_clicked">=</td>
         </tr>
         <tr>
           <td id="0" colspan="2">0</td>
-          <td id="c" style="font-weight: bold">C</td>
+          <td id="c" style="font-weight: bold" pys-onClick="sign_clicked">C</td>
         </tr>
       </tbody>
     </table>
